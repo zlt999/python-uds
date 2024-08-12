@@ -19,15 +19,15 @@ with open("README.md", "r") as fh:
 setup(
     # Needed to silence warnings (and to be a worthwhile package)
     name='python-uds',
-    url='https://github.com/richClubb/python-uds',
-    author='Richard Clubb',
-    author_email='richard.clubb@embeduk.com',
+    url='https://github.com/zlt999/python-uds',
+    author='zlt999',
+    author_email='ltzhang999@163.com',
     # Needed to actually package something
     packages=find_packages(exclude=["test", "test.*"]),
     # Needed for dependencies
-    install_requires=['python-can>=3.0.0', 'python-lin>=0.1.0', 'doipclient>=1.0.1'],
+    install_requires=['python-can>=3.0.0', 'python-lin>=0.1.0'],
     # *strongly* suggested for sharing
-    version='1.2.0',
+    version='1.2.1',
     # The license can be anything you like
     license='MIT',
     description='A library for interfacing with UDS using python',
