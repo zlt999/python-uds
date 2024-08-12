@@ -70,7 +70,8 @@ class DoipTp(iTp):
         if path.exists(baseConfig):
             self.__config.read(baseConfig)
         else:
-            raise FileNotFoundError("No base config file")
+            pass  # cannot find file if run it after packing by pyinstaller
+            # raise FileNotFoundError("No base config file")
 
         # check the config path
         if configPath is not None:
