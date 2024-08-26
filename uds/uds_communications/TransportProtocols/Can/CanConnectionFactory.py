@@ -1,5 +1,6 @@
 import can
-from can.interfaces import pcan, vector
+# comment to supporee exception when loading xldriver, since it's not used yet
+# from can.interfaces import pcan, vector
 from uds.uds_configuration.Config import Config
 from os import path
 from platform import system
