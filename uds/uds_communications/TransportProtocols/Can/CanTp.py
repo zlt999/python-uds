@@ -10,7 +10,8 @@ __email__ = "richard.clubb@embeduk.com"
 __status__ = "Development"
 
 import can
-from can.interfaces import pcan, vector
+# comment to suppress exception when loading xldriver, since it's not used yet
+# from can.interfaces import pcan, vector
 from time import sleep
 
 from uds import iTp
