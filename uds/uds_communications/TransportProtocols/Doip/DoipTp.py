@@ -47,8 +47,8 @@ class DoipTp(iTp):
             client_logical_address=self.__client_logical_address,
             use_secure=self.__use_secure)
 
-    def send(self, payload, functionalReq=False):  # TODO: functionalReq not used???
-        self.__connection.send_diagnostic(bytearray(payload))
+    def send(self, payload, functionalReq=False, timeout=20):  # TODO: functionalReq not used???
+        self.__connection.send_diagnostic(bytearray(payload), timeout=timeout)
 
     def recv(self, timeout_s):
         return list(self.__connection.receive_diagnostic(timeout=timeout_s))
