@@ -72,6 +72,8 @@ class Uds(object):
                 raise FileNotFoundError("specified config not found")
 
     def __checkKwargs(self, **kwargs):
+        if "uds" not in self.__config:
+            self.__config["uds"] = {}
 
         if 'transportProtocol' in kwargs:
             self.__config['uds']['transportProtocol'] = kwargs['transportProtocol']
