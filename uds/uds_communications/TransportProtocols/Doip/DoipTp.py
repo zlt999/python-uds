@@ -83,6 +83,8 @@ class DoipTp(iTp):
     ##
     # @brief goes through the kwargs and overrides any of the local configuration options
     def __checkKwargs(self, **kwargs):
+        if "DoIP" not in self.__config:
+            self.__config["DoIP"] = {}
         if 'ecu_ip' in kwargs:
             self.__config['DoIP']['ecuIP'] = kwargs['ecu_ip']
         if 'ecu_logical_address' in kwargs:
