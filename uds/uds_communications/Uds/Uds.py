@@ -122,7 +122,7 @@ class Uds(object):
 
     ##
     # @brief
-    def send(self, msg, responseRequired=True, functionalReq=False):
+    def send(self, msg, responseRequired=True, functionalReq=False, status_dict: dict = None):
         # sets a current transmission in progress - tester present (if running) will not send if this flag is set to true
         self.__transmissionActive_flag = True
         #print(("__transmissionActive_flag set:",self.__transmissionActive_flag))
@@ -135,6 +135,9 @@ class Uds(object):
             a = self.tp.send(msg, functionalReq)
         finally:
             self.sendLock.release()
+            
+        if status_dict is not None:
+            status_dict["send_succeed"] = True
 
         if functionalReq is True:
             responseRequired = False
